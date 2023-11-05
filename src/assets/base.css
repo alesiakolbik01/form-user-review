@@ -1,0 +1,41 @@
+/* color palette from <https://github.com/vuejs/theme> */
+:root {
+  
+  --color-background: #F7F7FB;
+  --purple: #4A3AFF;
+  --light-grey: #EFF0F7;
+  --yellow: #FFD029;
+  --dark: #170F49;
+  --white: #FFF;
+  --purple-light: #6F6C90;
+  --secondary-color-1: #F3F1FF;
+  --dark-purple: rgba(74, 58, 255, 0.18);
+  --header-height: 100px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--dark);
+  background: var(--color-background);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+header{
+  height: var(--header-height);
+}
