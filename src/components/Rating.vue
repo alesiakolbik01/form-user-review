@@ -1,7 +1,7 @@
 
 <script setup>
 
-import { defineProps, defineEmits, ref, watch } from 'vue';
+import { defineProps, defineEmits, ref, watch, onUpdated } from 'vue';
 
 const { modelValue } = defineProps({
     id: { type: String, required: true },
@@ -13,13 +13,13 @@ const emits = defineEmits(['handle-change']);
 const rating = ref(modelValue);
 
 watch(rating, (newValue) => {
-    emits('handle-change', newValue)
+  emits('handle-change', { value: parseInt(newValue), field: 'rating' })
 })
 
 </script>
 
 <template>
-    <legend for="rating">Your service rating</legend>
+    <legend for="rating" class="mb-2">Your service rating</legend>
     <fieldset>
         <input type="radio" name="rating" :id="'1-' + id " value="1" v-model="rating">
         <label :for="'1-' + id">1 Star</label>
@@ -49,8 +49,12 @@ fieldset {
 
 legend {
   padding-inline: 0.5rem;
-  color: var(--primary-color);
   border-bottom: 2px solid var(--primary-color);
+  color: var(--dark);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
 }
 
 /* Hide label */

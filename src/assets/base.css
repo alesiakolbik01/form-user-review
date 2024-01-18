@@ -10,7 +10,7 @@
   --purple-light: #6F6C90;
   --secondary-color-1: #F3F1FF;
   --dark-purple: rgba(74, 58, 255, 0.18);
-  --header-height: 100px;
+  --header-height: 127px;
 }
 
 *,
@@ -36,6 +36,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-header{
+header {
   height: var(--header-height);
 }

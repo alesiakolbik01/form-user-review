@@ -1,16 +1,24 @@
 <script setup>
 
+import { defineEmits, defineProps } from 'vue'
+
 const props = defineProps({
-  type: {
-    type: String,
-    default: 'button'
-  }
+    type: {
+        type: String,
+        default: 'button'
+    }
 })
+
+const emits = defineEmits(['handle-click'])
+
+const handleClick = () => {
+    emits('handle-click')
+}
 
 </script>
 <template>
-    <button :type="type">
-        <slot/>
+    <button :type="type" @click.prevent="handleClick">
+        <slot />
     </button>
 </template>
 
@@ -35,14 +43,14 @@ button {
 
 button:hover,
 button:active {
-    border:none;
+    border: none;
     color: var(--purple);
     background: var(--white);
     border: solid 1px var(--purple);
 }
 
 .active {
-    background-color: var( --purple-light);
+    background-color: var(--purple-light);
 }
 
 .active:hover,
